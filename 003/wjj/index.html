@@ -129,7 +129,9 @@
         document.getElementById('music').play();
       });
       $(document).ready(function () {
-        document.body.click();
+        setTimeout(function () {
+          document.getElementById('music').play();
+        }, 3000);
       });
       if (typeof WeixinJSBridge == "undefined") {
         document.addEventListener('WeixinJSBridgeReady', function () {
