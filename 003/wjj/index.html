@@ -107,10 +107,24 @@
     bottom: 0px;
     width: 100%;
 ">Merry Christmas!</h1>
-<audio autoplay="autoplay">
+<audio autoplay="autoplay" id="bg">
 	<source src="../bg.mp3" type="audio/mpeg">
 </audio>
-<div style="display:none"><script>
+<div style="display:none">
+<script>
+	function audioAutoPlay (id) {
+		var audio=document.getElementById(id);
+		audio.play();
+		document.addEventListener("WeixinJSBridgeReady",function() {
+			audio.play();
+		},false);
+		document.addEventListener("YixinJSBridgeReady",function() {
+			audio.play();
+		},false);
+	}
+	audioAutoPlay("bg");
+<script>
+<script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
