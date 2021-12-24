@@ -120,20 +120,26 @@
     bottom: 0px;
     width: 100%;
 ">Merry Christmas!</h1>
-  <audio autoplay="autoplay" id="bg">
-    <source src="../bg.mp3" type="audio/mpeg">
+  <audio autoplay="autoplay" id="music">
+    <source src="./bg.mp3" type="audio/mpeg">
   </audio>
   <div style="display:none">
     <script type="text/javascript">
-      var firstTouch = true;
-      $('body').bind("touchstart", function (e) {
-        if (firstTouch) {
-          firstTouch = false;
-          document.getElementById('bgm').play();
-        } else {
-          return;
-        }
-      }); 
+      document.addEventListener('click', () => {
+        document.getElementById('music').play();
+      });
+      if (typeof WeixinJSBridge == "undefined") {
+        document.addEventListener('WeixinJSBridgeReady', function () {
+          document.getElementById('music').play();
+        }, false);
+      } else {
+        WeixinJSBridge.invoke("getNetworkType", {}, function () {
+          document.getElementById('music').play();
+        });
+      }
+      document.addEventListener('touchstart', function () {
+        let music = document.getElementById('music').play;
+      });
     </script>
     <script>
       var _hmt = _hmt || [];
