@@ -5,11 +5,10 @@
   <meta charset="UTF-8">
   <title>圣诞树</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="../favicon.ico" />
-  <link rel="bookmark" href="../favicon.ico" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="bookmark" href="favicon.ico" />
   <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
   <link rel="stylesheet" href="https://www.5div.com/biaobai_shengdanshu/css/style.css">
-  <script src="jquery.js"></script>
 </head>
 
 <body>
@@ -112,7 +111,7 @@
     text-align: center;
     font-size: 6vw;
     width: 100%;
-">送给吴嘉嘉宝贝的圣诞树</h1>
+">送给吴嘉嘉宝宝</h1>
   <h1 style="
     left: unset;
     text-align: center;
@@ -121,29 +120,12 @@
     width: 100%;
 ">Merry Christmas!</h1>
   <audio autoplay="autoplay" id="music">
-    <source src="../bg.mp3" type="audio/mpeg">
+    <source src="bg.mp3" type="audio/mpeg">
   </audio>
   <div style="display:none">
     <script type="text/javascript">
       document.addEventListener('click', () => {
         document.getElementById('music').play();
-      });
-      $(document).ready(function () {
-        setTimeout(function () {
-          document.getElementById('music').play();
-        }, 3000);
-      });
-      if (typeof WeixinJSBridge == "undefined") {
-        document.addEventListener('WeixinJSBridgeReady', function () {
-          document.getElementById('music').play();
-        }, false);
-      } else {
-        WeixinJSBridge.invoke("getNetworkType", {}, function () {
-          document.getElementById('music').play();
-        });
-      }
-      document.addEventListener('touchstart', function () {
-        let music = document.getElementById('music').play;
       });
     </script>
     <script>
