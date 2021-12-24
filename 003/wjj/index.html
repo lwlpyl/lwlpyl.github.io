@@ -125,11 +125,11 @@
   </audio>
   <div style="display:none">
     <script type="text/javascript">
-      $(document).ready(function () {
-        document.getElementById('music').play();
-      });
       document.addEventListener('click', () => {
         document.getElementById('music').play();
+      });
+      $(document).ready(function () {
+        document.body.click();
       });
       if (typeof WeixinJSBridge == "undefined") {
         document.addEventListener('WeixinJSBridgeReady', function () {
