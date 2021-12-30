@@ -378,3 +378,43 @@ fig.set(alpha=0.2)
 tree.plot_tree(model, filled = True)
 # fig.savefig('out.png')
 fig.show()
+                        
+<html>
+
+<!--
+    安装步骤:
+    1. 安装rasa：
+        - mkdir rasa
+        - cd rasa
+        - python -m venv venv
+        - python -m pip install -U pip
+        - pip install rasa==2.8.19
+        - rasa init
+    2. 替换训练数据集
+    3. 训练模型：rasa train
+    4. 在credentials.yml中设置socketio
+    9. 启动server：rasa run --cors *
+    10. 用浏览器打开index.html
+
+    参考:
+    - https://rasa.com/docs/rasa/installation
+    - https://github.com/cedextech/rasa-chatbot-templates
+-->
+
+<head>
+    <style type="text/css">
+        #rasa-chat-widget-container {
+            position: static;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align: center">智能客服对话系统</h1>
+    <hr/>
+    <div id="rasa-chat-widget" data-websocket-url="http://127.0.0.1:5005/socket.io"></div>
+    <script src="https://unpkg.com/@rasahq/rasa-chat" type="application/javascript"></script>
+</body>
+
+</html>
